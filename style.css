@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+  height: 100vh;
+  width: 100vw;
+}
+
+.game {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #000, #111);
+  overflow: hidden;
+}
+
+#player {
+  position: absolute;
+  bottom: 80px;
+  width: 50px;
+  height: 80px;
+  background: #00f2ff;
+  box-shadow: 0 0 20px #00f2ff;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: left 0.2s, transform 0.3s;
+}
+
+.obstacle {
+  position: absolute;
+  width: 50px;
+  height: 80px;
+  background: #ff0066;
+  box-shadow: 0 0 15px #ff0066;
+  border-radius: 8px;
+  animation: moveDown 3s linear forwards;
+}
+
+@keyframes moveDown {
+  0% { top: -100px; }
+  100% { top: 100vh; }
+}
+
+#score {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 1.4em;
+  z-index: 10;
+}
+
+/* Touch Controls */
+.touch-controls {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 20;
+}
+
+.touch-controls button {
+  background: #222;
+  color: #0ff;
+  border: 2px solid #0ff;
+  font-size: 2em;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #0ff;
+  cursor: pointer;
+}#copyright {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9em;
+  color: #888;
+  z-index: 5;
+}
